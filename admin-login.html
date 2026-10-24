@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản trị — Ốc Xanh</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ========== TRANG ĐĂNG NHẬP ADMIN ========== -->
+  <main class="auth-page admin-auth">
+
+    <!-- Nút quay về trang chủ -->
+    <a href="index.html" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Về trang chủ
+    </a>
+
+    <!-- Thẻ đăng nhập admin -->
+    <div class="auth-card">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Ốc Xanh — Về trang chủ">
+        <span class="logo-mark">
+          <svg width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/></svg>
+        </span>
+        <span>Ốc Xanh<small>TƯƠI TỪ BIỂN · NGON TỪ TÂM</small></span>
+      </a>
+
+      <!-- Tiêu đề -->
+      <h1>Quản trị cửa hàng</h1>
+      <p class="auth-subtitle">Khu vực dành riêng cho quản trị viên Ốc Xanh.</p>
+
+      <!-- KHÔNG CÓ TABS ĐĂNG KÝ — chỉ đăng nhập -->
+
+      <!-- Form đăng nhập admin -->
+      <form class="auth-form" novalidate>
+
+        <div class="field">
+          <label for="admin-username">Tên đăng nhập</label>
+          <input class="input" type="text" id="admin-username" name="username" required autocomplete="username">
+        </div>
+
+        <div class="field">
+          <label for="admin-password">Mật khẩu</label>
+          <input class="input" type="password" id="admin-password" name="password" required minlength="4" autocomplete="current-password">
+        </div>
+
+        <p class="field-hint">Tài khoản mẫu: admin / 123456 (hoặc admin / admin)</p>
+
+        <button class="btn btn-primary full" type="submit">
+          Đăng nhập
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <!-- Chân thẻ -->
+      <div class="auth-foot">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6zM8 12l3 3 5-6"/></svg>
+        Khu vực quản trị được bảo mật
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- JS -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ốc Xanh — Tươi từ biển, ngon từ tâm</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<!-- ========== HEADER (sticky) ========== -->
+<header class="header">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <span class="logo-mark">
+        <svg width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/>
+        </svg>
+      </span>
+      <span>Ốc Xanh<small>TƯƠI TỪ BIỂN · NGON TỪ TÂM</small></span>
+    </a>
+
+    <!-- Nav -->
+    <nav class="main-nav">
+      <a href="#" class="nav-active">Trang chủ</a>
+      <a href="#products">Sản phẩm</a>
+      <a href="#advanced-search">Tìm kiếm nâng cao</a>
+    </nav>
+
+    <!-- Actions -->
+    <div class="header-actions">
+      <label class="quick-search">
+        <span class="sr-only">Tìm sản phẩm</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/>
+        </svg>
+        <input type="search" placeholder="Tìm món ốc yêu thích...">
+      </label>
+      <button class="icon-button cart-button" aria-label="Mở giỏ hàng">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+        </svg>
+        <span class="cart-count">0</span>
+      </button>
+      <div class="account">
+        <a href="login.html" class="account-button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a7 7 0 0 0-14 0v2M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/>
+          </svg>
+          <span>Đăng nhập</span>
+        </a>
+      </div>
+      <button class="icon-button mobile-toggle" aria-label="Mở menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== SECTION: TRANG CHỦ (is-active) ========== -->
+<div class="shop-section is-active" id="section-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-orbit orbit-one"></div>
+    <div class="hero-orbit orbit-two"></div>
+    <div class="container hero-content">
+      <span class="hero-label"><span></span> HẢI SẢN TƯƠI NGON MỖI NGÀY</span>
+      <h1>Trọn vị biển xanh,<br>tươi ngon từng món ốc.</h1>
+      <p>Ốc tươi tuyển chọn, chế biến đậm đà. Một chút hương vị biển,<br class="desktop-break">
+         một bữa ăn thật vui bên những người bạn yêu thương.</p>
+      <a href="#products" class="btn hero-cta">
+        Xem thực đơn ốc
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 12h16m-6-6 6 6-6 6"/>
+        </svg>
+      </a>
+      <div class="hero-assurance">
+        <span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m5 12 4 4L19 6"/>
+          </svg>
+          Tươi sống mỗi ngày
+        </span>
+        <span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m5 12 4 4L19 6"/>
+          </svg>
+          Nguồn gốc rõ ràng
+        </span>
+        <span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m5 12 4 4L19 6"/>
+          </svg>
+          Giao hàng nhanh
+        </span>
+      </div>
+    </div>
+    <div class="hero-shell">
+      <svg width="220" height="220" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/>
+      </svg>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- Thẻ loại -->
+  <div class="container">
+    <section class="categories-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">HÔM NAY BẠN MUỐN ĂN GÌ?</span>
+          <h2>Khám phá thực đơn</h2>
+        </div>
+        <p>Từ ốc tươi đến món ngon, có đủ cho mọi sở thích.</p>
+      </div>
+      <div class="category-grid">
+        <!-- 1. Các món ốc -->
+        <a href="#products" class="category-card">
+          <span class="category-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/>
+            </svg>
+          </span>
+          <h3>Các món ốc</h3>
+          <small>8 món đặc sản</small>
+        </a>
+        <!-- 2. Sò, Hào & Nghêu -->
+        <a href="#products" class="category-card">
+          <span class="category-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 3C9 2 3 6 4 14s14 10 16-11ZM4 21l11-12"/>
+            </svg>
+          </span>
+          <h3>Sò, Hào & Nghêu</h3>
+          <small>8 món tươi ngọt</small>
+        </a>
+        <!-- 3. Hải sản nướng -->
+        <a href="#products" class="category-card">
+          <span class="category-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </span>
+          <h3>Hải sản nướng</h3>
+          <small>2 món than hoa</small>
+        </a>
+        <!-- 4. Mì, Cơm & Cháo -->
+        <a href="#products" class="category-card">
+          <span class="category-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m3 7 9-5 9 5v12l-9 4-9-4zM3 7l9 5 9-5M12 12v11"/>
+            </svg>
+          </span>
+          <h3>Mì, Cơm & Cháo</h3>
+          <small>4 món ấm bụng</small>
+        </a>
+      </div>
+    </section>
+
+    <!-- Sản phẩm -->
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">TƯƠI NGON, ĐÁNG THỬ</span>
+          <h2>Sản phẩm nổi bật</h2>
+        </div>
+        <span class="fresh-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6zM8 12l3 3 5-6"/>
+          </svg>
+          Chất lượng trong từng lựa chọn
+        </span>
+      </div>
+
+      <!-- Chips -->
+      <div class="product-toolbar">
+        <div class="chips">
+          <button class="chip is-active">Tất cả</button>
+          <button class="chip">Ốc biển</button>
+          <button class="chip">Ốc nước ngọt</button>
+          <button class="chip">Ốc chế biến</button>
+          <button class="chip">Combo ốc</button>
+          <button class="chip">Nước chấm</button>
+        </div>
+        <button class="filter-button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16M7 12h10M10 17h4"/>
+          </svg>
+          Bộ lọc
+        </button>
+      </div>
+
+      <!-- Results row -->
+      <div class="results-row">
+        <span>Hiển thị <strong>1–8</strong> trong 19 sản phẩm</span>
+        <label>Sắp xếp:
+          <select>
+            <option>Phổ biến nhất</option>
+            <option>Giá thấp đến cao</option>
+            <option>Giá cao đến thấp</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- Product grid -->
+      <div class="product-grid">
+
+        <!-- 1. Ốc hương -->
+        <article class="product-card reveal is-visible" style="--i:0">
+          <div class="thumb">
+            <img src="images/products/oc-huong.jpg" alt="Ốc hương" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+            <span class="badge favorite-badge">Bán chạy</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc biển <span>·</span> kg</span>
+            <a href="#" class="product-title">Ốc hương</a>
+            <p class="price">280.000đ <small>/ kg</small></p>
+            <button class="btn-add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. Ốc len -->
+        <article class="product-card reveal is-visible" style="--i:1">
+          <div class="thumb">
+            <img src="images/products/oc-len.jpg" alt="Ốc len" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc biển <span>·</span> kg</span>
+            <a href="#" class="product-title">Ốc len</a>
+            <p class="price">150.000đ <small>/ kg</small></p>
+            <button class="btn-add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. Ốc móng tay -->
+        <article class="product-card reveal is-visible" style="--i:2">
+          <div class="thumb">
+            <img src="images/products/oc-mong-tay.jpg" alt="Ốc móng tay" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-warning"><span class="status-dot"></span> Sắp hết</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc biển <span>·</span> kg</span>
+            <a href="#" class="product-title">Ốc móng tay</a>
+            <p class="price">120.000đ <small>/ kg</small></p>
+            <button class="btn-add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. Ốc mỡ -->
+        <article class="product-card reveal is-visible" style="--i:3">
+          <div class="thumb">
+            <img src="images/products/oc-mo.jpg" alt="Ốc mỡ" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc biển <span>·</span> kg</span>
+            <a href="#" class="product-title">Ốc mỡ</a>
+            <p class="price">160.000đ <small>/ kg</small></p>
+            <button class="btn-add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. Ốc bươu -->
+        <article class="product-card reveal is-visible" style="--i:4">
+          <div class="thumb">
+            <img src="images/products/oc-buou.jpg" alt="Ốc bươu" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc nước ngọt <span>·</span> kg</span>
+            <a href="#" class="product-title">Ốc bươu</a>
+            <p class="price">85.000đ <small>/ kg</small></p>
+            <button class="btn-add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- 6. Ốc nhồi -->
+        <article class="product-card reveal is-visible" style="--i:5">
+          <div class="thumb">
+            <img src="images/products/oc-nhoi.jpg" alt="Ốc nhồi" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc nước ngọt <span>·</span> kg</span>
+            <a href="#" class="product-title">Ốc nhồi</a>
+            <p class="price">110.000đ <small>/ kg</small></p>
+            <button class="btn-add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- 7. Ốc vặn -->
+        <article class="product-card reveal is-visible" style="--i:6">
+          <div class="thumb">
+            <img src="images/products/oc-van.jpg" alt="Ốc vặn" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc nước ngọt <span>·</span> kg</span>
+            <a href="#" class="product-title">Ốc vặn</a>
+            <p class="price">70.000đ <small>/ kg</small></p>
+            <button class="btn-add">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+        </article>
+
+        <!-- 8. Ốc hương rang muối ớt (Hết hàng) -->
+        <article class="product-card reveal is-visible out-of-stock" style="--i:7">
+          <div class="thumb">
+            <img src="images/products/oc-huong-rang-muoi-ot.jpg" alt="Ốc hương rang muối ớt" width="800" height="600" onerror="this.style.display='none'">
+            <span class="badge badge-danger"><span class="status-dot"></span> Hết hàng</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Ốc chế biến <span>·</span> phần</span>
+            <a href="#" class="product-title">Ốc hương rang muối ớt</a>
+            <p class="price">135.000đ <small>/ phần</small></p>
+            <button class="btn-add" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+              </svg>
+              Hết hàng
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button aria-label="Trang trước" class="is-disabled" disabled>&#8249;</button>
+        <button class="is-active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button aria-label="Trang sau">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+      <div class="benefit-item">
+        <span class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 3C9 2 3 6 4 14s14 10 16-11ZM4 21l11-12"/>
+          </svg>
+        </span>
+        <h3>Tươi ngon mỗi ngày</h3>
+        <p>Tuyển chọn từ nguồn hải sản uy tín</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6zM8 12l3 3 5-6"/>
+          </svg>
+        </span>
+        <h3>An tâm chất lượng</h3>
+        <p>Nguồn gốc rõ ràng, vệ sinh đảm bảo</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M1 5h13v12H1zM14 9h4l4 4v4h-8M8 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0M20 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+          </svg>
+        </span>
+        <h3>Giao hàng tận nơi</h3>
+        <p>Nhanh chóng, giữ trọn độ tươi ngon</p>
+      </div>
+      <div class="benefit-item">
+        <span class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 5c-3-3-6-1-8 1-2-2-5-4-8-1-5 5 3 11 8 15 5-4 13-10 8-15"/>
+          </svg>
+        </span>
+        <h3>Phục vụ tận tâm</h3>
+        <p>Luôn sẵn sàng hỗ trợ bạn</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ========== SECTION: TÌM KIẾM NÂNG CAO ========== -->
+<div class="shop-section" id="section-search">
+  <div class="container content-page">
+    <h1>Tìm kiếm nâng cao</h1>
+    <form class="advanced-filter">
+      <div class="field">
+        <label for="search-name">Tên sản phẩm</label>
+        <input class="input" id="search-name" placeholder="Nhập tên món ốc">
+      </div>
+      <div class="field">
+        <label for="search-category">Loại sản phẩm</label>
+        <select class="select" id="search-category">
+          <option>Tất cả</option>
+          <option>Ốc biển</option>
+          <option>Ốc nước ngọt</option>
+          <option>Ốc chế biến</option>
+          <option>Combo ốc</option>
+          <option>Nước chấm</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="search-min">Giá từ (đ)</label>
+        <input class="input" type="number" id="search-min" min="0">
+      </div>
+      <div class="field">
+        <label for="search-max">Giá đến (đ)</label>
+        <input class="input" type="number" id="search-max" min="0">
+      </div>
+      <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+      <button class="btn btn-secondary" type="button">Xóa lọc</button>
+    </form>
+    <!-- Kết quả sẽ render bởi JS -->
+    <div class="product-grid" style="margin-top: 24px;">
+      <!-- Placeholder for search results -->
+    </div>
+    <div class="pagination" id="search-pagination" style="margin-top: 24px;"></div>
+  </div>
+</div>
+
+<!-- ========== SECTION: THANH TOÁN ========== -->
+<div class="shop-section" id="section-checkout">
+  <main class="container content-page">
+    <a href="#" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      Tiếp tục mua sắm
+    </a>
+    <h1>Thanh toán</h1>
+    <div class="checkout-grid">
+      <!-- Form -->
+      <form class="panel">
+        <h2>Thông tin giao hàng</h2>
+
+        <!-- Chọn địa chỉ nhận hàng: từ tài khoản hoặc địa chỉ mới -->
+        <div class="field" style="margin-bottom:16px;">
+          <label style="font-weight:700; margin-bottom:8px;">Địa chỉ nhận hàng</label>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <label class="radio-card selected" id="opt-address-account" style="flex:1; cursor:pointer;">
+              <input type="radio" name="address_mode" value="account" checked> Địa chỉ từ tài khoản
+            </label>
+            <label class="radio-card" id="opt-address-new" style="flex:1; cursor:pointer;">
+              <input type="radio" name="address_mode" value="new"> Nhập địa chỉ mới
+            </label>
+          </div>
+        </div>
+
+        <div id="box-address-account" style="background:var(--blue-50); padding:12px 14px; border-radius:8px; margin-bottom:16px; font-size:14px; line-height:1.6;">
+          <p style="margin-bottom:4px;"><strong>Người nhận:</strong> <span id="ck-account-name">Chưa có</span> (<span id="ck-account-phone">Chưa có SĐT</span>)</p>
+          <p style="margin:0;"><strong>Địa chỉ:</strong> <span id="ck-account-address">Chưa có địa chỉ lưu trong tài khoản</span></p>
+        </div>
+
+        <div id="box-address-fields" style="display:none;">
+          <div class="field">
+            <label for="ck-name">Họ và tên người nhận *</label>
+            <input class="input" id="ck-name" required placeholder="Nhập họ và tên người nhận">
+          </div>
+          <div class="field">
+            <label for="ck-phone">Số điện thoại *</label>
+            <input class="input" type="tel" id="ck-phone" required placeholder="Nhập số điện thoại nhận hàng">
+          </div>
+          <div class="field">
+            <label for="ck-address">Địa chỉ giao hàng mới *</label>
+            <input class="input" id="ck-address" required placeholder="Số nhà, tên đường, phường/xã, quận/huyện...">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ck-note">Ghi chú cho đơn hàng</label>
+          <input class="input" id="ck-note" placeholder="Ví dụ: Giao sau 17h, bỏ nhiều sả ớt...">
+        </div>
+        <h3>Hình thức thanh toán</h3>
+        <label class="radio-card selected">
+          <input type="radio" name="payment" checked> Tiền mặt khi nhận hàng
+        </label>
+        <label class="radio-card">
+          <input type="radio" name="payment"> Chuyển khoản ngân hàng
+        </label>
+        <label class="radio-card">
+          <input type="radio" name="payment"> Ví điện tử
+        </label>
+        <button class="btn btn-primary full" type="submit">Đặt hàng · 0đ</button>
+        <p class="field-hint">Đây là luồng thanh toán mẫu, không phát sinh giao dịch thực.</p>
+      </form>
+      <!-- Summary -->
+      <aside class="panel summary">
+        <h2>Đơn hàng của bạn</h2>
+        <div class="empty">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+          </svg>
+          <h3>Chưa có sản phẩm</h3>
+          <p>Hãy thêm sản phẩm vào giỏ hàng trước.</p>
+        </div>
+        <div class="total">
+          <span>Tổng thanh toán</span>
+          <strong>0đ</strong>
+        </div>
+        <p>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M1 5h13v12H1zM14 9h4l4 4v4h-8M8 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0M20 18a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+          </svg>
+          Phí giao hàng sẽ được cửa hàng xác nhận.
+        </p>
+      </aside>
+    </div>
+  </main>
+</div>
+
+<!-- ========== SECTION: XEM LẠI ĐƠN ========== -->
+<div class="shop-section" id="section-confirmation">
+  <main class="container content-page">
+    <h1>Đặt hàng thành công!</h1>
+    <div class="panel" style="max-width:700px">
+      <span class="confirmation-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m5 12 4 4L19 6"/>
+        </svg>
+      </span>
+      <h2>Cảm ơn bạn đã lựa chọn Ốc Xanh</h2>
+      <p>Mã đơn hàng: <strong>#OX001</strong> <span class="badge badge-info">Mới đặt</span></p>
+      <!-- Sample order items -->
+      <div class="summary-item">
+        <span>Ốc hương × 2</span>
+        <strong>560.000đ</strong>
+      </div>
+      <div class="summary-item">
+        <span>Ốc len × 1</span>
+        <strong>150.000đ</strong>
+      </div>
+      <p>Địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP. HCM</p>
+      <p>Thanh toán: Tiền mặt khi nhận hàng</p>
+      <div class="total">Tổng tiền <strong>710.000đ</strong></div>
+      <a href="#products" class="btn btn-primary">Tiếp tục mua sắm</a>
+    </div>
+  </main>
+</div>
+
+<!-- ========== SECTION: ĐƠN HÀNG CỦA TÔI ========== -->
+<div class="shop-section" id="section-orders">
+  <main class="container content-page">
+    <h1>Đơn hàng của tôi</h1>
+    <div class="table-scroll">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Mã đơn</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#OX001</td>
+            <td>12/10/2026</td>
+            <td>710.000đ</td>
+            <td><span class="badge badge-info">Mới đặt</span></td>
+            <td><button class="btn btn-ghost">Xem</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- ========== SECTION: THÔNG TIN CÁ NHÂN ========== -->
+<div class="shop-section" id="section-profile">
+  <main class="container content-page">
+    <h1>Thông tin cá nhân</h1>
+    <form class="panel profile-form">
+      <div class="field">
+        <label for="pf-name">Họ và tên</label>
+        <input class="input" id="pf-name" required>
+      </div>
+      <div class="field">
+        <label for="pf-email">Email</label>
+        <input class="input" type="email" id="pf-email">
+      </div>
+      <div class="field">
+        <label for="pf-phone">Số điện thoại</label>
+        <input class="input" type="tel" id="pf-phone">
+      </div>
+      <div class="field">
+        <label for="pf-address">Địa chỉ</label>
+        <input class="input" id="pf-address">
+      </div>
+      <button class="btn btn-primary" type="submit">Lưu thông tin</button>
+    </form>
+  </main>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <!-- Column 1: Logo + Intro -->
+    <div class="footer-col">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/>
+          </svg>
+        </span>
+        <span>Ốc Xanh</span>
+      </a>
+      <p>Mang trọn vị biển xanh đến bàn ăn mỗi ngày. Ốc tươi tuyển chọn, chế biến đậm đà, giao hàng tận nơi.</p>
+    </div>
+    <!-- Column 2: Liên hệ -->
+    <div class="footer-col">
+      <h4>Liên hệ</h4>
+      <ul>
+        <li>123 Nguyễn Văn Cừ, Quận 5, TP. HCM</li>
+        <li>0909 123 456</li>
+        <li>info@ocxanh.vn</li>
+      </ul>
+    </div>
+    <!-- Column 3: Khám phá -->
+    <div class="footer-col">
+      <h4>Khám phá</h4>
+      <ul>
+        <li><a href="#products">Sản phẩm</a></li>
+        <li><a href="#advanced-search">Tìm kiếm nâng cao</a></li>
+        <li><a href="login.html">Đăng nhập</a></li>
+        <li><a href="admin-login.html" class="admin-link">Quản trị viên</a></li>
+      </ul>
+    </div>
+    <!-- Column 4: Giờ mở cửa -->
+    <div class="footer-col">
+      <h4>Giờ mở cửa</h4>
+      <ul>
+        <li>Thứ 2 – Thứ 6: 8:00 – 21:00</li>
+        <li>Thứ 7 – Chủ nhật: 9:00 – 22:00</li>
+        <li>Phục vụ tất cả các ngày lễ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 Ốc Xanh. Mọi quyền được bảo lưu.</p>
+    <p>Ảnh minh họa: Unsplash</p>
+  </div>
+</footer>
+
+<!-- ========== OVERLAYS (hidden by default) ========== -->
+
+<!-- Modal chi tiết sản phẩm -->
+<div class="overlay" id="modal-product-detail">
+  <section class="modal product-modal" role="dialog" aria-modal="true">
+    <button class="icon-button modal-close" aria-label="Đóng chi tiết">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m6 6 12 12M6 18 18 6"/>
+      </svg>
+    </button>
+    <img src="images/products/oc-huong.jpg" alt="Ốc hương" width="800" height="600" onerror="this.style.display='none'">
+    <div>
+      <span class="eyebrow">Ốc biển</span>
+      <h2>Ốc hương</h2>
+      <span class="badge badge-success">Xuất xứ: Việt Nam</span>
+      <p>Tuyển chọn mỗi ngày từ nguồn hải sản uy tín. Tươi ngon, chất lượng, phù hợp cho những bữa ăn cùng gia đình và bạn bè.</p>
+      <p class="price">280.000đ / kg</p>
+      <div class="field">
+        <label for="modal-qty">Số lượng</label>
+        <input class="input" type="number" id="modal-qty" value="1" min="1" max="24">
+      </div>
+      <button class="btn btn-primary full">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+        </svg>
+        Thêm vào giỏ
+      </button>
+    </div>
+  </section>
+</div>
+
+<!-- Ngăn kéo giỏ hàng -->
+<div class="overlay drawer-overlay" id="cart-drawer">
+  <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Giỏ hàng">
+    <div class="drawer-header">
+      <h2>Giỏ hàng <small>(0)</small></h2>
+      <button class="icon-button" aria-label="Đóng giỏ hàng">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m6 6 12 12M6 18 18 6"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items">
+      <div class="empty">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
+        </svg>
+        <h3>Giỏ hàng đang trống</h3>
+        <p>Thêm một chút vị biển cho bữa ăn hôm nay.</p>
+        <a href="#products" class="btn btn-primary">Xem sản phẩm</a>
+      </div>
+    </div>
+    <div class="drawer-footer" style="display:none">
+      <div class="total">
+        <span>Tạm tính</span>
+        <strong>0đ</strong>
+      </div>
+      <a href="#" class="btn btn-primary full">
+        Thanh toán
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 12h16m-6-6 6 6-6 6"/>
+        </svg>
+      </a>
+    </div>
+  </aside>
+</div>
+
+<!-- Hộp xác nhận / Xem chi tiết -->
+<div class="overlay" id="modal-confirm">
+  <section class="modal confirm-modal" role="dialog" aria-modal="true" aria-label="Xác nhận">
+    <h2>Xác nhận</h2>
+    <p>Bạn có chắc chắn muốn thực hiện hành động này?</p>
+    <div class="form-actions" style="display:flex; justify-content:flex-end; gap:8px; margin-top:20px;">
+      <button type="button" class="btn btn-secondary">Hủy</button>
+      <button type="button" class="btn btn-primary">Xác nhận</button>
+    </div>
+  </section>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m5 12 4 4L19 6"/>
+  </svg>
+  <span>Đã thêm vào giỏ hàng</span>
+</div>
+
+<!-- JS -->
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/shop-products.js"></script>
+<script src="js/shop-cart.js"></script>
+<script src="js/shop-account.js"></script>
+
+</body>
+</html>

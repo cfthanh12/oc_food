@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng nhập — Ốc Xanh</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+  <!-- ========== TRANG ĐĂNG NHẬP / ĐĂNG KÝ KHÁCH HÀNG ========== -->
+  <main class="auth-page">
+
+    <!-- Nút quay về trang chủ -->
+    <a href="index.html" class="back-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Về trang chủ
+    </a>
+
+    <!-- Thẻ đăng nhập -->
+    <div class="auth-card">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Ốc Xanh — Về trang chủ">
+        <span class="logo-mark">
+          <svg width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/></svg>
+        </span>
+        <span>Ốc Xanh<small>TƯƠI TỪ BIỂN · NGON TỪ TÂM</small></span>
+      </a>
+
+      <!-- Tiêu đề (thay đổi tùy tab) -->
+      <h1>Chào mừng bạn trở lại</h1>
+      <p class="auth-subtitle">Đăng nhập để thưởng thức trọn vị biển xanh.</p>
+
+      <!-- Tabs Đăng nhập / Đăng ký -->
+      <div class="auth-tabs">
+        <button class="is-active" type="button">Đăng nhập</button>
+        <button type="button">Đăng ký</button>
+      </div>
+
+      <!-- ===== Form ĐĂNG NHẬP (hiện mặc định) ===== -->
+      <form class="auth-form login-form" novalidate>
+
+        <div class="field">
+          <label for="login-username">Email hoặc tên đăng nhập</label>
+          <input class="input" type="text" id="login-username" name="username" required autocomplete="username">
+        </div>
+
+        <div class="field">
+          <label for="login-password">Mật khẩu</label>
+          <input class="input" type="password" id="login-password" name="password" required minlength="6" autocomplete="current-password">
+        </div>
+
+        <p class="field-hint">Tài khoản mẫu: nhập tên bất kỳ và mật khẩu từ 6 ký tự.</p>
+
+        <button class="btn btn-primary full" type="submit">
+          Đăng nhập
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <!-- ===== Form ĐĂNG KÝ (ẩn mặc định) ===== -->
+      <form class="auth-form register-form" style="display:none" novalidate>
+
+        <div class="field">
+          <label for="reg-fullname">Họ và tên</label>
+          <input class="input" type="text" id="reg-fullname" name="fullname" required>
+        </div>
+
+        <div class="field">
+          <label for="reg-email">Email hoặc tên đăng nhập</label>
+          <input class="input" type="text" id="reg-email" name="username" required autocomplete="username">
+        </div>
+
+        <div class="field">
+          <label for="reg-phone">Số điện thoại</label>
+          <input class="input" type="tel" id="reg-phone" name="phone" required>
+        </div>
+
+        <div class="field">
+          <label for="reg-password">Mật khẩu</label>
+          <input class="input" type="password" id="reg-password" name="password" required minlength="6" autocomplete="new-password">
+        </div>
+
+        <p class="field-hint">Tài khoản mẫu: nhập tên bất kỳ và mật khẩu từ 6 ký tự.</p>
+
+        <button class="btn btn-primary full" type="submit">
+          Tạo tài khoản
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>
+        </button>
+      </form>
+
+      <!-- Chân thẻ -->
+      <div class="auth-foot">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6zM8 12l3 3 5-6"/></svg>
+        Thông tin của bạn luôn được bảo vệ
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- JS -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+
+</body>
+</html>
+

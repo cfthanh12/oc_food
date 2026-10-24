@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Chạy Cửa Hàng Ốc Xanh (Chrome - Khuyên dùng)",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Chạy Cửa Hàng Ốc Xanh (Edge)",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Chạy Trang Quản Trị Admin (Chrome)",
+            "file": "${workspaceFolder}/admin.html"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Chạy qua Localhost:3000 (cần bật server.js)",
+            "url": "http://localhost:3000/index.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị — Ốc Xanh</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-layout">
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar">
+    <a href="index.html" class="sidebar-logo" aria-label="Trang chủ Ốc Xanh">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20 8 8 0 0 0 0-16 6 6 0 0 1 0 12 4 4 0 0 0 0-8"/></svg>
+      <strong>Ốc Xanh</strong>
+    </a>
+
+    <span class="sidebar-label">QUẢN LÝ CỬA HÀNG</span>
+
+    <nav class="sidebar-nav" aria-label="Menu quản trị">
+      <!-- 1. Người dùng -->
+      <button class="sidebar-btn is-active" data-section="section-users" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Người dùng
+      </button>
+
+      <!-- 2. Loại sản phẩm -->
+      <button class="sidebar-btn" data-section="section-categories" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Loại sản phẩm
+      </button>
+
+      <!-- 3. Sản phẩm -->
+      <button class="sidebar-btn" data-section="section-products" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        Sản phẩm
+      </button>
+
+      <!-- 4. Nhập hàng -->
+      <button class="sidebar-btn" data-section="section-receipts" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Nhập hàng
+      </button>
+
+      <!-- 5. Giá bán -->
+      <button class="sidebar-btn" data-section="section-pricing" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Giá bán
+      </button>
+
+      <!-- 6. Đơn hàng -->
+      <button class="sidebar-btn" data-section="section-orders" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Đơn hàng
+      </button>
+
+      <!-- 7. Tồn kho -->
+      <button class="sidebar-btn" data-section="section-stock" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        Tồn kho
+      </button>
+    </nav>
+
+    <a href="index.html" class="sidebar-btn sidebar-back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M15 18l-6-6 6-6"/></svg>
+      Về cửa hàng
+    </a>
+  </aside>
+
+  <!-- ========== MAIN ========== -->
+  <div class="admin-main">
+    <!-- TOPBAR -->
+    <div class="admin-topbar">
+      <button class="icon-button mobile-toggle" aria-label="Menu quản trị" type="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <strong>Quản lý người dùng</strong>
+      <div class="topbar-user">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Quản trị viên
+        <a href="admin-login.html">Đăng xuất</a>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <main class="admin-body">
+      <!-- Stat cards (always visible) -->
+      <span class="eyebrow">TỔNG QUAN CỬA HÀNG</span>
+      <h1>Bảng điều khiển</h1>
+      <p class="muted">Theo dõi và quản lý cửa hàng Ốc Xanh của bạn.</p>
+
+      <div class="stat-grid">
+        <!-- Stat 1: Đơn hàng mới -->
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Đơn hàng mới</span>
+            <strong class="stat-value">3</strong>
+          </div>
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+        </div>
+
+        <!-- Stat 2: Doanh thu -->
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Doanh thu</span>
+            <strong class="stat-value">1.245.000đ</strong>
+          </div>
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+        </div>
+
+        <!-- Stat 3: SP sắp hết -->
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">SP sắp hết</span>
+            <strong class="stat-value">2</strong>
+          </div>
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+        </div>
+
+        <!-- Stat 4: Khách bị khóa -->
+        <div class="stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Khách bị khóa</span>
+            <strong class="stat-value">0</strong>
+          </div>
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 1: NGƯỜI DÙNG (is-active) ===== -->
+      <section class="admin-section is-active" id="section-users">
+        <div class="admin-toolbar">
+          <label class="quick-search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Tìm kiếm người dùng..." aria-label="Tìm người dùng">
+          </label>
+        </div>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Tên tài khoản</th>
+                <th>Họ và tên</th>
+                <th>Email</th>
+                <th>SĐT</th>
+                <th>Vai trò</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>admin</td>
+                <td>Quản trị viên</td>
+                <td>admin@ocxanh.vn</td>
+                <td>0901234567</td>
+                <td>Admin</td>
+                <td><span class="badge badge-success">Hoạt động</span></td>
+                <td><button class="btn-link" type="button">Sửa</button></td>
+              </tr>
+              <tr>
+                <td>nguyenvana</td>
+                <td>Nguyễn Văn A</td>
+                <td>vana@gmail.com</td>
+                <td>0912345678</td>
+                <td>Khách hàng</td>
+                <td><span class="badge badge-success">Hoạt động</span></td>
+                <td><button class="btn-link" type="button">Khóa</button></td>
+              </tr>
+              <tr>
+                <td>tranthib</td>
+                <td>Trần Thị B</td>
+                <td>thib@gmail.com</td>
+                <td>0923456789</td>
+                <td>Khách hàng</td>
+                <td><span class="badge badge-danger">Bị khóa</span></td>
+                <td><button class="btn-link" type="button">Mở khóa</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 2: LOẠI SẢN PHẨM ===== -->
+      <section class="admin-section" id="section-categories">
+        <div class="admin-toolbar">
+          <label class="quick-search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Tìm loại sản phẩm..." aria-label="Tìm loại">
+          </label>
+          <button class="btn btn-primary" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Thêm loại
+          </button>
+        </div>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Mã loại</th>
+                <th>Tên loại</th>
+                <th>Số sản phẩm</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LOAI01</td>
+                <td>Ốc biển</td>
+                <td>4</td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link btn-link-danger" type="button">Xóa</button>
+                </td>
+              </tr>
+              <tr>
+                <td>LOAI02</td>
+                <td>Ốc nước ngọt</td>
+                <td>3</td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link btn-link-danger" type="button">Xóa</button>
+                </td>
+              </tr>
+              <tr>
+                <td>LOAI03</td>
+                <td>Ốc chế biến</td>
+                <td>3</td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link btn-link-danger" type="button">Xóa</button>
+                </td>
+              </tr>
+              <tr>
+                <td>LOAI04</td>
+                <td>Combo ốc</td>
+                <td>3</td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link btn-link-danger" type="button">Xóa</button>
+                </td>
+              </tr>
+              <tr>
+                <td>LOAI05</td>
+                <td>Nước chấm</td>
+                <td>3</td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link btn-link-danger" type="button">Xóa</button>
+                </td>
+              </tr>
+              <tr>
+                <td>LOAI06</td>
+                <td>Món ăn kèm</td>
+                <td>3</td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link btn-link-danger" type="button">Xóa</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 3: SẢN PHẨM ===== -->
+      <section class="admin-section" id="section-products">
+        <div class="admin-toolbar">
+          <label class="quick-search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Tìm sản phẩm..." aria-label="Tìm sản phẩm">
+          </label>
+          <button class="btn btn-primary" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Thêm sản phẩm
+          </button>
+        </div>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Loại</th>
+                <th>Giá bán</th>
+                <th>Tồn kho</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- SP001 - Ốc hương -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-huong.jpg" alt="Ốc hương" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc hương<small>SP001</small></span>
+                </td>
+                <td>Ốc biển</td>
+                <td>280.000đ</td>
+                <td>24 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP002 - Ốc len -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-len.jpg" alt="Ốc len" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc len<small>SP002</small></span>
+                </td>
+                <td>Ốc biển</td>
+                <td>150.000đ</td>
+                <td>18 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP003 - Ốc móng tay -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-mong-tay.jpg" alt="Ốc móng tay" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc móng tay<small>SP003</small></span>
+                </td>
+                <td>Ốc biển</td>
+                <td>120.000đ</td>
+                <td>5 kg</td>
+                <td><span class="badge badge-warning">Sắp hết</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP004 - Ốc mỡ -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-mo.jpg" alt="Ốc mỡ" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc mỡ<small>SP004</small></span>
+                </td>
+                <td>Ốc biển</td>
+                <td>160.000đ</td>
+                <td>20 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP005 - Ốc bươu -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-buou.jpg" alt="Ốc bươu" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc bươu<small>SP005</small></span>
+                </td>
+                <td>Ốc nước ngọt</td>
+                <td>85.000đ</td>
+                <td>15 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP006 - Ốc nhồi -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-nhoi.jpg" alt="Ốc nhồi" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc nhồi<small>SP006</small></span>
+                </td>
+                <td>Ốc nước ngọt</td>
+                <td>110.000đ</td>
+                <td>16 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP007 - Ốc vặn -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-van.jpg" alt="Ốc vặn" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc vặn<small>SP007</small></span>
+                </td>
+                <td>Ốc nước ngọt</td>
+                <td>70.000đ</td>
+                <td>22 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP008 - Ốc bàn tay -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-ban-tay.jpg" alt="Ốc bàn tay" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc bàn tay<small>SP008</small></span>
+                </td>
+                <td>Ốc biển</td>
+                <td>320.000đ</td>
+                <td>8 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP009 - Ốc đụn -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-dun.jpg" alt="Ốc đụn" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc đụn<small>SP009</small></span>
+                </td>
+                <td>Ốc biển</td>
+                <td>200.000đ</td>
+                <td>10 kg</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP010 - Ốc tai tượng -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-tai-tuong.jpg" alt="Ốc tai tượng" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc tai tượng<small>SP010</small></span>
+                </td>
+                <td>Ốc biển</td>
+                <td>450.000đ</td>
+                <td>3 kg</td>
+                <td><span class="badge badge-warning">Sắp hết</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP011 - Ốc hương rang muối ớt -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-huong-rang-muoi-ot.jpg" alt="Ốc hương rang muối ớt" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc hương rang muối ớt<small>SP011</small></span>
+                </td>
+                <td>Ốc chế biến</td>
+                <td>135.000đ</td>
+                <td>0 phần</td>
+                <td><span class="badge badge-danger">Hết hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP012 - Ốc len xào dừa -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-len-xao-dua.jpg" alt="Ốc len xào dừa" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc len xào dừa<small>SP012</small></span>
+                </td>
+                <td>Ốc chế biến</td>
+                <td>95.000đ</td>
+                <td>8 phần</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP013 - Ốc nướng mỡ hành -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-nuong-mo-hanh.jpg" alt="Ốc nướng mỡ hành" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc nướng mỡ hành<small>SP013</small></span>
+                </td>
+                <td>Ốc chế biến</td>
+                <td>110.000đ</td>
+                <td>12 phần</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP014 - Combo 2 người -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/combo-2-nguoi.jpg" alt="Combo 2 người" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Combo 2 người<small>SP014</small></span>
+                </td>
+                <td>Combo ốc</td>
+                <td>249.000đ</td>
+                <td>10 combo</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP015 - Combo 4 người -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/combo-4-nguoi.jpg" alt="Combo 4 người" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Combo 4 người<small>SP015</small></span>
+                </td>
+                <td>Combo ốc</td>
+                <td>399.000đ</td>
+                <td>6 combo</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP016 - Combo gia đình -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/combo-gia-dinh.jpg" alt="Combo gia đình" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Combo gia đình<small>SP016</small></span>
+                </td>
+                <td>Combo ốc</td>
+                <td>599.000đ</td>
+                <td>4 combo</td>
+                <td><span class="badge badge-warning">Sắp hết</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP017 - Muối ớt xanh -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/muoi-ot-xanh.jpg" alt="Muối ớt xanh" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Muối ớt xanh<small>SP017</small></span>
+                </td>
+                <td>Nước chấm</td>
+                <td>25.000đ</td>
+                <td>30 hũ</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP018 - Nước mắm me -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/nuoc-mam-me.jpg" alt="Nước mắm me" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Nước mắm me<small>SP018</small></span>
+                </td>
+                <td>Nước chấm</td>
+                <td>20.000đ</td>
+                <td>25 hũ</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+              <!-- SP019 - Sa tế -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/sa-te.jpg" alt="Sa tế" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Sa tế<small>SP019</small></span>
+                </td>
+                <td>Nước chấm</td>
+                <td>30.000đ</td>
+                <td>20 hũ</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Ẩn</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="is-disabled" aria-label="Trang trước">&#8249;</button>
+          <button class="is-active">1</button>
+          <button>2</button>
+          <button aria-label="Trang sau">&#8250;</button>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 4: NHẬP HÀNG ===== -->
+      <section class="admin-section" id="section-receipts">
+        <div class="admin-toolbar">
+          <label class="quick-search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Tìm phiếu nhập..." aria-label="Tìm phiếu nhập">
+          </label>
+          <button class="btn btn-primary" type="button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Tạo phiếu nhập
+          </button>
+        </div>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Mã phiếu</th>
+                <th>Ngày nhập</th>
+                <th>Số dòng</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PN001</td>
+                <td>10/10/2026</td>
+                <td>5</td>
+                <td>15.000.000đ</td>
+                <td><span class="badge badge-success">Hoàn thành</span></td>
+                <td><button class="btn-link" type="button">Xem</button></td>
+              </tr>
+              <tr>
+                <td>PN002</td>
+                <td>12/10/2026</td>
+                <td>3</td>
+                <td>8.500.000đ</td>
+                <td><span class="badge badge-neutral">Nháp</span></td>
+                <td>
+                  <button class="btn-link" type="button">Sửa</button>
+                  <button class="btn-link" type="button">Hoàn thành</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 5: GIÁ BÁN ===== -->
+      <section class="admin-section" id="section-pricing">
+        <div class="admin-toolbar" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+          <label class="quick-search" style="margin-right:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Tìm sản phẩm..." aria-label="Tìm giá bán">
+          </label>
+          <select class="select" id="pricing-filter-category" style="width:160px; min-height:44px;" aria-label="Lọc theo loại">
+            <option value="Tất cả">Tất cả loại</option>
+          </select>
+          <div style="display:flex; align-items:center; gap:8px; margin-left:auto; flex-wrap:wrap;">
+            <span style="font-size:13px; font-weight:600; color:var(--ink-700);">Đặt % theo loại:</span>
+            <select class="select" id="pricing-batch-category" style="width:140px; min-height:40px; padding:0 8px;" aria-label="Chọn loại sản phẩm"></select>
+            <input type="number" class="input" id="pricing-batch-margin" min="0" max="200" placeholder="% LN" style="width:85px; min-height:40px; padding:0 8px;" value="30">
+            <button type="button" class="btn btn-secondary" id="btn-apply-category-margin" style="min-height:40px; padding:0 12px; font-size:13px;">Áp dụng</button>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Loại</th>
+                <th>Giá vốn mẫu</th>
+                <th>% lợi nhuận</th>
+                <th>Giá bán dự kiến</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Ốc hương -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-huong.jpg" alt="Ốc hương" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc hương</span>
+                </td>
+                <td>Ốc biển</td>
+                <td>215.385đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>280.000đ</strong></td>
+              </tr>
+              <!-- Ốc len -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-len.jpg" alt="Ốc len" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc len</span>
+                </td>
+                <td>Ốc biển</td>
+                <td>115.385đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>150.000đ</strong></td>
+              </tr>
+              <!-- Ốc móng tay -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-mong-tay.jpg" alt="Ốc móng tay" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc móng tay</span>
+                </td>
+                <td>Ốc biển</td>
+                <td>92.308đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>120.000đ</strong></td>
+              </tr>
+              <!-- Ốc mỡ -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-mo.jpg" alt="Ốc mỡ" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc mỡ</span>
+                </td>
+                <td>Ốc biển</td>
+                <td>123.077đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>160.000đ</strong></td>
+              </tr>
+              <!-- Ốc bươu -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-buou.jpg" alt="Ốc bươu" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc bươu</span>
+                </td>
+                <td>Ốc nước ngọt</td>
+                <td>65.385đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>85.000đ</strong></td>
+              </tr>
+              <!-- Ốc nhồi -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-nhoi.jpg" alt="Ốc nhồi" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc nhồi</span>
+                </td>
+                <td>Ốc nước ngọt</td>
+                <td>84.615đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>110.000đ</strong></td>
+              </tr>
+              <!-- Ốc vặn -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-van.jpg" alt="Ốc vặn" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc vặn</span>
+                </td>
+                <td>Ốc nước ngọt</td>
+                <td>53.846đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>70.000đ</strong></td>
+              </tr>
+              <!-- Ốc bàn tay -->
+              <tr>
+                <td class="table-product">
+                  <img src="images/products/oc-ban-tay.jpg" alt="Ốc bàn tay" width="45" height="45" onerror="this.style.display='none'">
+                  <span>Ốc bàn tay</span>
+                </td>
+                <td>Ốc biển</td>
+                <td>246.154đ</td>
+                <td><input class="profit-input" type="number" value="30" min="0" aria-label="Lợi nhuận %"></td>
+                <td><strong>320.000đ</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 6: ĐƠN HÀNG ===== -->
+      <section class="admin-section" id="section-orders">
+        <div class="admin-toolbar" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+          <label class="quick-search" style="margin-right:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Tìm mã đơn, khách hàng, SĐT..." aria-label="Tìm đơn hàng">
+          </label>
+          <select class="select" id="filter-order-status" style="width:160px; min-height:44px;" aria-label="Lọc trạng thái">
+            <option value="Tất cả">Tất cả trạng thái</option>
+            <option value="Mới đặt">Mới đặt</option>
+            <option value="Đã xử lý">Đã xử lý</option>
+            <option value="Đã giao">Đã giao</option>
+            <option value="Hủy">Hủy</option>
+          </select>
+          <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+            <span style="font-size:13px; font-weight:600; color:var(--ink-700);">Từ:</span>
+            <input type="date" class="input" id="filter-order-from" style="width:140px; min-height:44px;" aria-label="Từ ngày">
+            <span style="font-size:13px; font-weight:600; color:var(--ink-700);">Đến:</span>
+            <input type="date" class="input" id="filter-order-to" style="width:140px; min-height:44px;" aria-label="Đến ngày">
+            <button type="button" class="btn btn-secondary" id="btn-clear-order-filter" style="min-height:44px; padding:0 12px; font-size:13px;">Xóa lọc</button>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>Ngày đặt</th>
+                <th>Địa chỉ</th>
+                <th>Tổng tiền</th>
+                <th>Thanh toán</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OX001</td>
+                <td>Nguyễn Văn A</td>
+                <td>10/10/2026</td>
+                <td>123 Nguyễn Văn Cừ, Q.5</td>
+                <td>529.000đ</td>
+                <td>Tiền mặt</td>
+                <td><span class="badge badge-info">Mới đặt</span></td>
+                <td>
+                  <button class="btn-link" type="button">Xem</button>
+                  <button class="btn-link" type="button">Xử lý</button>
+                </td>
+              </tr>
+              <tr>
+                <td>OX002</td>
+                <td>Trần Thị B</td>
+                <td>09/10/2026</td>
+                <td>45 Lê Lợi, Q.1</td>
+                <td>345.000đ</td>
+                <td>Chuyển khoản</td>
+                <td><span class="badge badge-warning">Đã xử lý</span></td>
+                <td><button class="btn-link" type="button">Xem</button></td>
+              </tr>
+              <tr>
+                <td>OX003</td>
+                <td>Lê Văn C</td>
+                <td>08/10/2026</td>
+                <td>78 Trần Hưng Đạo, Q.5</td>
+                <td>698.000đ</td>
+                <td>Ví điện tử</td>
+                <td><span class="badge badge-success">Đã giao</span></td>
+                <td><button class="btn-link" type="button">Xem</button></td>
+              </tr>
+              <tr>
+                <td>OX004</td>
+                <td>Phạm D</td>
+                <td>07/10/2026</td>
+                <td>12 Hai Bà Trưng, Q.3</td>
+                <td>150.000đ</td>
+                <td>Tiền mặt</td>
+                <td><span class="badge badge-danger">Hủy</span></td>
+                <td><button class="btn-link" type="button">Xem</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== SECTION 7: TỒN KHO ===== -->
+      <section class="admin-section" id="section-stock">
+        <!-- Warning banner -->
+        <div class="warning-banner">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Cảnh báo:</strong> Đang kiểm tra tồn kho...</span>
+        </div>
+
+        <div class="admin-toolbar" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:16px;">
+          <label class="quick-search" style="margin-right:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" placeholder="Tìm tên hoặc mã sản phẩm..." aria-label="Tìm tồn kho">
+          </label>
+          <select class="select" id="stock-filter-category" style="width:160px; min-height:44px;" aria-label="Lọc theo loại">
+            <option value="Tất cả">Tất cả loại</option>
+          </select>
+          <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+            <span style="font-size:13px; font-weight:600; color:var(--ink-700);">Từ:</span>
+            <input type="date" class="input" id="stock-filter-from" style="width:140px; min-height:44px;" aria-label="Từ ngày">
+            <span style="font-size:13px; font-weight:600; color:var(--ink-700);">Đến:</span>
+            <input type="date" class="input" id="stock-filter-to" style="width:140px; min-height:44px;" aria-label="Đến ngày">
+            <button type="button" class="btn btn-secondary" id="btn-clear-stock-filter" style="min-height:44px; padding:0 12px; font-size:13px;">Xóa lọc</button>
+          </div>
+        </div>
+
+        <h3 style="margin-top:16px;">Báo cáo nhập – xuất – tồn</h3>
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Tồn đầu</th>
+                <th>Nhập</th>
+                <th>Xuất</th>
+                <th>Tồn cuối</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ốc hương</td>
+                <td>20</td>
+                <td>10</td>
+                <td>6</td>
+                <td>24</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc len</td>
+                <td>15</td>
+                <td>8</td>
+                <td>5</td>
+                <td>18</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc móng tay</td>
+                <td>8</td>
+                <td>0</td>
+                <td>3</td>
+                <td>5</td>
+                <td><span class="badge badge-warning">Sắp hết</span></td>
+              </tr>
+              <tr>
+                <td>Ốc mỡ</td>
+                <td>18</td>
+                <td>5</td>
+                <td>3</td>
+                <td>20</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc bươu</td>
+                <td>12</td>
+                <td>5</td>
+                <td>2</td>
+                <td>15</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc nhồi</td>
+                <td>14</td>
+                <td>4</td>
+                <td>2</td>
+                <td>16</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc vặn</td>
+                <td>20</td>
+                <td>5</td>
+                <td>3</td>
+                <td>22</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc bàn tay</td>
+                <td>6</td>
+                <td>5</td>
+                <td>3</td>
+                <td>8</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc đụn</td>
+                <td>8</td>
+                <td>5</td>
+                <td>3</td>
+                <td>10</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc tai tượng</td>
+                <td>5</td>
+                <td>0</td>
+                <td>2</td>
+                <td>3</td>
+                <td><span class="badge badge-warning">Sắp hết</span></td>
+              </tr>
+              <tr>
+                <td>Ốc hương rang muối ớt</td>
+                <td>5</td>
+                <td>0</td>
+                <td>5</td>
+                <td>0</td>
+                <td><span class="badge badge-danger">Hết hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc len xào dừa</td>
+                <td>10</td>
+                <td>0</td>
+                <td>2</td>
+                <td>8</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Ốc nướng mỡ hành</td>
+                <td>15</td>
+                <td>0</td>
+                <td>3</td>
+                <td>12</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Combo 2 người</td>
+                <td>8</td>
+                <td>5</td>
+                <td>3</td>
+                <td>10</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Combo 4 người</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>6</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Combo gia đình</td>
+                <td>3</td>
+                <td>3</td>
+                <td>2</td>
+                <td>4</td>
+                <td><span class="badge badge-warning">Sắp hết</span></td>
+              </tr>
+              <tr>
+                <td>Muối ớt xanh</td>
+                <td>25</td>
+                <td>10</td>
+                <td>5</td>
+                <td>30</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Nước mắm me</td>
+                <td>20</td>
+                <td>10</td>
+                <td>5</td>
+                <td>25</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr>
+                <td>Sa tế</td>
+                <td>18</td>
+                <td>5</td>
+                <td>3</td>
+                <td>20</td>
+                <td><span class="badge badge-success">Còn hàng</span></td>
+              </tr>
+              <tr class="table-total">
+                <td><strong>TỔNG CỘNG</strong></td>
+                <td><strong>234</strong></td>
+                <td><strong>84</strong></td>
+                <td><strong>57</strong></td>
+                <td><strong>261</strong></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="field-hint">Chế độ demo · Dữ liệu được lưu trong phiên sử dụng hiện tại.</p>
+    </main>
+  </div>
+</div>
+
+<!-- ===== MODALS (hidden by default) ===== -->
+
+<!-- Modal chỉnh sửa / thêm sản phẩm -->
+<div class="overlay" id="modal-edit-product">
+  <section class="modal edit-modal" role="dialog" aria-modal="true" aria-label="Sản phẩm" style="max-width: 600px;">
+    <h2>Thông tin sản phẩm</h2>
+    <form>
+      <div style="display:grid; grid-template-columns:1fr 2fr; gap:12px;">
+        <div class="field">
+          <label for="edit-id">Mã sản phẩm</label>
+          <input class="input" id="edit-id" placeholder="Tự sinh nếu trống">
+        </div>
+        <div class="field">
+          <label for="edit-name">Tên sản phẩm *</label>
+          <input class="input" id="edit-name" required placeholder="Nhập tên món ốc...">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="field">
+          <label for="edit-category">Loại sản phẩm *</label>
+          <select class="select" id="edit-category">
+            <option>Ốc biển</option>
+            <option>Ốc nước ngọt</option>
+            <option>Ốc chế biến</option>
+            <option>Combo ốc</option>
+            <option>Nước chấm</option>
+            <option>Món ăn kèm</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="edit-unit">Đơn vị tính</label>
+          <input class="input" id="edit-unit" placeholder="kg, phần, combo, hũ...">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="field">
+          <label for="edit-price">Giá bán (đ) *</label>
+          <input class="input" type="number" id="edit-price" required min="0" step="1000">
+        </div>
+        <div class="field">
+          <label for="edit-stock">Số lượng tồn kho *</label>
+          <input class="input" type="number" id="edit-stock" required min="0">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="edit-image">Đường dẫn hình ảnh</label>
+        <input class="input" id="edit-image" placeholder="Ví dụ: images/products/oc-huong.jpg">
+      </div>
+
+      <div class="field">
+        <label for="edit-description">Mô tả sản phẩm</label>
+        <textarea class="input" id="edit-description" rows="3" placeholder="Nhập mô tả chi tiết món ăn..."></textarea>
+      </div>
+
+      <div class="form-actions" style="display:flex; justify-content:flex-end; gap:8px; margin-top:20px;">
+        <button type="button" class="btn btn-secondary">Hủy</button>
+        <button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<!-- Hộp xác nhận xóa -->
+<div class="overlay" id="modal-confirm">
+  <section class="modal confirm-modal" role="dialog" aria-modal="true" aria-label="Xác nhận">
+    <h2>Xác nhận</h2>
+    <p>Bạn có chắc chắn muốn thực hiện hành động này? Thao tác này không thể hoàn tác.</p>
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary">Hủy</button>
+      <button type="button" class="btn btn-danger">Xác nhận</button>
+    </div>
+  </section>
+</div>
+
+<!-- Toast (hidden) -->
+<div class="toast" id="toast" role="status">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  <span>Thao tác thành công</span>
+</div>
+
+<!-- Scripts -->
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/admin-users.js"></script>
+<script src="js/admin-categories.js"></script>
+<script src="js/admin-products.js"></script>
+<script src="js/admin-receipts.js"></script>
+<script src="js/admin-pricing.js"></script>
+<script src="js/admin-orders.js"></script>
+<script src="js/admin-stock.js"></script>
+</body>
+</html>
