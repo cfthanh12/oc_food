@@ -9,24 +9,114 @@ let currentSort = 'popular';
 let currentPage = 1;
 const PER_PAGE = 8;
 
+let productSearchIndex = null;
+
+function normalizeSearchText(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd');
+}
+
+function getTrigrams(value) {
+  const characters = Array.from(value);
+  const trigrams = new Set();
+  for (let i = 0; i <= characters.length - 3; i++) {
+    trigrams.add(characters.slice(i, i + 3).join(''));
+  }
+  return trigrams;
+}
+
+function buildProductSearchIndex(products) {
+  const index = {
+    entries: products.map(product => ({
+      name: normalizeSearchText(product.name)
+    })),
+    trigrams: new Map()
+  };
+
+  index.entries.forEach((entry, productIndex) => {
+    getTrigrams(entry.name).forEach(trigram => {
+      if (!index.trigrams.has(trigram)) {
+        index.trigrams.set(trigram, new Set());
+      }
+      index.trigrams.get(trigram).add(productIndex);
+    });
+  });
+
+  return index;
+}
+
+function getProductSearchIndex(products) {
+  if (!productSearchIndex) {
+    productSearchIndex = buildProductSearchIndex(products);
+  }
+  return productSearchIndex;
+}
+
+function getTrigramCandidates(index, keyword) {
+  const trigrams = getTrigrams(keyword);
+  if (trigrams.size === 0) return null;
+
+  const matches = [];
+  for (const trigram of trigrams) {
+    const productIndexes = index.trigrams.get(trigram);
+    if (!productIndexes) return new Set();
+    matches.push(productIndexes);
+  }
+
+  matches.sort((a, b) => a.size - b.size);
+  const candidates = new Set();
+  for (const productIndex of matches[0]) {
+    if (matches.every(productIndexes => productIndexes.has(productIndex))) {
+      candidates.add(productIndex);
+    }
+  }
+  return candidates;
+}
+
+window.addEventListener('storage', function(event) {
+  if (!event.key || event.key === STORAGE_KEYS.PRODUCTS) {
+    productSearchIndex = null;
+  }
+});
+
 // Lấy danh sách sản phẩm đã lọc và sắp xếp
 function getFilteredProducts() {
   const hiddenCats = getCategories().filter(c => c.isVisible === false).map(c => c.name);
-  let products = getProducts().filter(p => p.isVisible !== false && !hiddenCats.includes(p.category));
-
-  // Lọc theo loại
-  if (currentCategory !== 'Tất cả') {
-    products = products.filter(p => p.category === currentCategory || p.categoryId === currentCategory);
-  }
-
-  // Lọc theo từ khóa tìm kiếm nhanh
-  if (currentSearchKeyword) {
-    const kw = currentSearchKeyword.toLowerCase();
-    products = products.filter(p =>
-      p.name.toLowerCase().includes(kw) ||
-      (p.category && p.category.toLowerCase().includes(kw)) ||
-      (p.description && p.description.toLowerCase().includes(kw))
+  const allProducts = getProducts();
+  const normalizedKeyword = normalizeSearchText(currentSearchKeyword);
+  const eligibleProducts = allProducts
+    .map((product, index) => ({ product, index }))
+    .filter(({ product }) =>
+      product.isVisible !== false &&
+      !hiddenCats.includes(product.category) &&
+      (currentCategory === 'Tất cả' || product.category === currentCategory || product.categoryId === currentCategory)
     );
+
+  let products = eligibleProducts.map(({ product }) => product);
+  if (normalizedKeyword) {
+    const rawKeyword = String(currentSearchKeyword || '').trim().toLowerCase();
+    const hasDiacritics = normalizeSearchText(rawKeyword) !== rawKeyword;
+    const exactMatches = hasDiacritics
+      ? eligibleProducts.filter(({ product }) =>
+          String(product.name || '').toLowerCase().includes(rawKeyword)
+        )
+      : [];
+
+    if (hasDiacritics) {
+      products = exactMatches.map(({ product }) => product);
+    } else {
+      const searchIndex = getProductSearchIndex(allProducts);
+      const candidates = getTrigramCandidates(searchIndex, normalizedKeyword);
+      products = eligibleProducts
+        .filter(({ index }) => !candidates || candidates.has(index))
+        .filter(({ index }) =>
+          searchIndex.entries[index].name.includes(normalizedKeyword)
+        )
+        .map(({ product }) => product);
+    }
   }
 
   // Sắp xếp
