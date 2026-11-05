@@ -389,10 +389,47 @@
 }
 
 /* Ô tìm kiếm */
-.admin-toolbar .input {
+.admin-toolbar .quick-search {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 1 1 480px;
+  width: 100%;
+  max-width: 640px;
+  min-width: min(100%, 280px);
+  height: 52px;
+  padding: 0 var(--sp-4);
+  box-sizing: border-box;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
+  color: var(--color-text-muted);
+}
+
+.admin-toolbar .quick-search input {
+  order: 1;
   flex: 1;
-  min-width: 200px;
-  max-width: 320px;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+}
+
+.admin-toolbar .quick-search svg {
+  order: 2;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+
+.admin-toolbar .quick-search:focus-within {
+  border-color: var(--color-focus);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, .2);
 }
 
 /* Bộ lọc (select) */
@@ -400,12 +437,6 @@
   width: auto;
   min-width: 160px;
 }
-
-/* Nút "Thêm mới" – đẩy sang phải */
-.admin-toolbar .btn-primary {
-  margin-left: auto;
-}
-
 
 /* ==========================================================
    7. BẢNG DỮ LIỆU ADMIN (TABLES)
@@ -762,71 +793,22 @@
 
 
 /* ---------- Mobile: ≤767px ----------
-   Sidebar ẩn hoàn toàn, mở như drawer bên trái. */
+   Giữ menu dạng thanh biểu tượng để không cần nút mở sidebar. */
 @media (max-width: 767px) {
-  /* Hiện nút hamburger */
-  .sidebar-toggle,
-  .admin-topbar .mobile-toggle {
-    display: inline-flex;
-  }
-
-  /* Sidebar ẩn, trượt ra ngoài */
   .sidebar {
-    width: var(--sidebar-w);
-    transform: translateX(-100%);
-    transition: transform var(--t-base) var(--ease-out);
+    transform: none;
   }
 
-  /* Khi mở drawer – hiện đầy đủ sidebar */
-  .sidebar.is-open,
-  .sidebar.sidebar-open {
-    transform: translateX(0);
+  .sidebar-logo strong {
+    display: none;
   }
 
-  /* Hiện lại chữ khi drawer mở */
-  .sidebar.is-open .sidebar-logo-text,
-  .sidebar.sidebar-open .sidebar-logo-text,
-  .sidebar.is-open .sidebar-item-text,
-  .sidebar.sidebar-open .sidebar-item-text,
-  .sidebar.is-open .sidebar-label,
-  .sidebar.sidebar-open .sidebar-label,
-  .sidebar.is-open .sidebar-footer,
-  .sidebar.sidebar-open .sidebar-footer {
-    display: block;
+  .sidebar .sidebar-btn {
+    font-size: 0;
   }
 
-  .sidebar.is-open .sidebar-logo,
-  .sidebar.sidebar-open .sidebar-logo {
-    justify-content: flex-start;
-    padding: var(--sp-5);
-  }
-
-  .sidebar.is-open .sidebar-item,
-  .sidebar.sidebar-open .sidebar-item,
-  .sidebar.is-open .sidebar-btn,
-  .sidebar.sidebar-open .sidebar-btn {
-    justify-content: flex-start;
-    padding: var(--sp-2) var(--sp-4);
-    border-left-width: 3px;
-    border-bottom: none;
-  }
-
-  .sidebar.is-open .sidebar-item.is-active,
-  .sidebar.sidebar-open .sidebar-item.is-active,
-  .sidebar.is-open .sidebar-btn.is-active,
-  .sidebar.sidebar-open .sidebar-btn.is-active {
-    border-left-color: var(--blue-400);
-    border-bottom-color: transparent;
-  }
-
-  /* Nội dung chính – hết margin trái */
   .admin-main {
-    margin-left: 0;
-  }
-
-  /* Topbar – thêm nút hamburger */
-  .admin-topbar {
-    gap: var(--sp-3);
+    margin-left: 72px;
   }
 
   /* Thẻ thống kê: 1 cột */

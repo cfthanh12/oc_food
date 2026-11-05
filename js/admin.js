@@ -53,9 +53,6 @@ function switchAdminSection(sectionId) {
   // 5. Cập nhật các thẻ thống kê
   updateAdminStats();
 
-  // Đóng sidebar trên mobile
-  const sidebar = document.querySelector('.sidebar');
-  if (sidebar) sidebar.classList.remove('sidebar-open');
 }
 
 // Cập nhật 4 thẻ thống kê trên Admin Dashboard
@@ -113,22 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-
-  // Mobile sidebar toggle button
-  const mobileToggle = document.querySelector('.admin-topbar .mobile-toggle, .sidebar-toggle');
-  const sidebar = document.querySelector('.sidebar');
-  if (mobileToggle && sidebar) {
-    mobileToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      sidebar.classList.toggle('sidebar-open');
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.sidebar') && !e.target.closest('.mobile-toggle')) {
-        sidebar.classList.remove('sidebar-open');
-      }
-    });
-  }
 
   // Đăng xuất admin
   const logoutBtn = document.querySelector('.topbar-user a, .admin-logout');
