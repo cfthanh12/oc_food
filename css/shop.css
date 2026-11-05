@@ -1156,15 +1156,6 @@
   margin-top: var(--sp-5);
 }
 
-/* Nền đặc biệt cho admin */
-.admin-auth {
-  background: var(--blue-900);
-}
-
-.admin-auth > .back-link {
-  color: var(--white);
-}
-
 /* Nút đầy chiều rộng */
 .full {
   width: 100%;
@@ -1616,4 +1607,3 @@ footer strong {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
