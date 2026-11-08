@@ -1,0 +1,6 @@
+# Dev-only / local tooling — không đưa vào bài nộp
+.superpowers/
+tools/
+.commandcode/
+.vscode/
+docs/

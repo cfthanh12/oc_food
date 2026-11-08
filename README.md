@@ -33,7 +33,7 @@ Dự án tuân thủ tiêu chí **độc lập, tối ưu hiệu năng, gọn nh
 ### 2.1. Frontend
 * **HTML5 Semantic:** Sử dụng cấu trúc thẻ chuẩn ngữ nghĩa (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<dialog>`), giúp mã nguồn tường minh và dễ bảo trì.
 * **CSS3 Hiện đại (Modern CSS):**
-  * **CSS Custom Properties (Biến CSS):** Định nghĩa toàn bộ hệ thống màu sắc chủ đạo (`--color-primary`, `--color-accent`), khoảng cách (`spacing`), kích thước chữ và bóng đổ (`box-shadow`) tại `css/common.css`.
+  * **CSS Custom Properties (Biến CSS):** Định nghĩa hệ thống màu hải sản (teal biển `#0E7490`, kem cát `#FFF6E9`, CTA cam đất `#C2410C`, coral trang trí `#FF6B4A`, biển sâu `#073B4C`), khoảng cách (`spacing`), kích thước chữ và bóng đổ (`box-shadow`) tại `css/common.css`.
   * **Flexbox & CSS Grid:** Bố cục linh hoạt cho lưới sản phẩm (Product Grid), bảng quản trị Admin, thanh điều hướng và giỏ hàng.
   * **Responsive Design:** Tương thích trên cả Desktop, Máy tính bảng và Điện thoại di động (có Mobile Menu Hamburger).
   * **Transitions & Keyframe Animations:** Hiệu ứng hover nổi nhẹ, chuyển tab mượt mà, thanh gạch chân menu trượt thông minh.
@@ -43,7 +43,7 @@ Dự án tuân thủ tiêu chí **độc lập, tối ưu hiệu năng, gọn nh
 * **Biểu tượng (Vector SVG Icons):**
   * Toàn bộ icon (giỏ hàng, tìm kiếm, người dùng, mũi tên, đóng/mở) được nhúng trực tiếp bằng mã **Inline SVG**, không dùng thư viện mạng như FontAwesome hay Bootstrap Icons. Nhờ đó, **không bao giờ bị mất icon** khi máy chấm không có mạng.
 * **Phông chữ hiển thị:**
-  * Sử dụng hệ phông tiêu chuẩn hệ điều hành: `Arial, "Helvetica Neue", Helvetica, sans-serif` kết hợp mã hóa tiếng Việt `UTF-8`. Đảm bảo hiển thị chuẩn xác 100% tiếng Việt có dấu, không bao giờ bị lỗi ô vuông hay mất dấu trên mọi hệ điều hành (Windows, macOS, Linux).
+  * Sử dụng hệ phông tiêu chuẩn hệ điều hành: `"Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif` kết hợp mã hóa tiếng Việt `UTF-8`. Đảm bảo hiển thị chuẩn xác 100% tiếng Việt có dấu, không bao giờ bị lỗi ô vuông hay mất dấu trên mọi hệ điều hành (Windows, macOS, Linux).
 
 ### 2.2. Cơ chế lưu trữ dữ liệu (Client-Side Storage)
 * **HTML5 `localStorage`:** Đóng vai trò như một **Cơ sở dữ liệu NoSQL/JSON** thu nhỏ hoạt động trực tiếp trên trình duyệt.

@@ -29,15 +29,17 @@
       <a href="#advanced-search">Tìm kiếm nâng cao</a>
     </nav>
 
+    <!-- Tìm kiếm nhanh (đặt ngoài header-actions để mobile xuống hàng riêng) -->
+    <label class="quick-search">
+      <span class="sr-only">Tìm sản phẩm</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/>
+      </svg>
+      <input type="search" placeholder="Tìm món ốc yêu thích...">
+    </label>
+
     <!-- Actions -->
     <div class="header-actions">
-      <label class="quick-search">
-        <span class="sr-only">Tìm sản phẩm</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/>
-        </svg>
-        <input type="search" placeholder="Tìm món ốc yêu thích...">
-      </label>
       <button class="icon-button cart-button" aria-label="Mở giỏ hàng">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M2 3h3l3 12h11l3-9H6M9 20h.01M18 20h.01"/>
@@ -52,7 +54,7 @@
           <span>Đăng nhập</span>
         </a>
       </div>
-      <button class="icon-button mobile-toggle" aria-label="Mở menu">
+      <button class="icon-button mobile-toggle" aria-label="Mở menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M3 6h18M3 12h18M3 18h18"/>
         </svg>
@@ -66,45 +68,49 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-orbit orbit-one"></div>
-    <div class="hero-orbit orbit-two"></div>
-    <div class="container hero-content">
-      <span class="hero-label"><span></span> HẢI SẢN TƯƠI NGON MỖI NGÀY</span>
-      <h1>Trọn vị biển xanh,<br>tươi ngon từng món ốc.</h1>
-      <p>Ốc tươi tuyển chọn, chế biến đậm đà. Một chút hương vị biển,<br class="desktop-break">
-         một bữa ăn thật vui bên những người bạn yêu thương.</p>
-      <a href="#products" class="btn hero-cta">
-        Xem thực đơn ốc
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M4 12h16m-6-6 6 6-6 6"/>
-        </svg>
-      </a>
-      <div class="hero-assurance">
-        <span>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m5 12 4 4L19 6"/>
-          </svg>
-          Tươi sống mỗi ngày
-        </span>
-        <span>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m5 12 4 4L19 6"/>
-          </svg>
-          Nguồn gốc rõ ràng
-        </span>
-        <span>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m5 12 4 4L19 6"/>
-          </svg>
-          Giao hàng nhanh
-        </span>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-label"><span></span> HẢI SẢN TƯƠI MỖI NGÀY</span>
+        <h1>Trọn vị biển xanh,<br>tươi ngon từng món ốc.</h1>
+        <p>Ốc tươi tuyển chọn, chế biến đậm đà. Một chút hương vị biển,<br class="desktop-break">
+           một bữa ăn thật vui bên những người bạn yêu thương.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn hero-cta">
+            Xem thực đơn ốc
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 12h16m-6-6 6 6-6 6"/>
+            </svg>
+          </a>
+          <a href="#products" class="btn hero-cta-secondary">Hôm nay có gì?</a>
+        </div>
+        <div class="hero-assurance">
+          <span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"/>
+            </svg>
+            Tươi sống mỗi ngày
+          </span>
+          <span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"/>
+            </svg>
+            Nguồn gốc rõ ràng
+          </span>
+          <span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"/>
+            </svg>
+            Giao hàng nhanh
+          </span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img class="hero-photo-main" src="images/products/oc-huong-rang-muoi.jpg" alt="Ốc hương rang muối" width="800" height="600" loading="eager" onerror="this.style.display='none'">
+        <img class="hero-photo-small" src="images/products/so-huyet-xao-toi.jpg" alt="Sò huyết xào tỏi" width="400" height="300" loading="lazy" onerror="this.style.display='none'">
+        <span class="hero-fresh">TƯƠI<br><b>HÔM NAY</b></span>
       </div>
     </div>
-    <div class="hero-shell">
-      <svg width="220" height="220" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/>
-      </svg>
-    </div>
+    <div class="hero-bubbles" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="wave"></div>
   </section>
 
@@ -121,43 +127,47 @@
       <div class="category-grid">
         <!-- 1. Các món ốc -->
         <a href="#products" class="category-card">
-          <span class="category-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 21c-5 0-9-4-9-9a9 9 0 0 1 18 0c0 4-3 7-7 7a5 5 0 0 1-5-5 4 4 0 0 1 4-4 3 3 0 0 1 3 3 2 2 0 0 1-2 2M5 19l-2 2h9"/>
-            </svg>
+          <span class="category-media">
+            <img src="images/products/oc-bulot-xao-bo.jpg" alt="" width="600" height="450" loading="lazy" onerror="this.style.display='none'">
           </span>
-          <h3>Các món ốc</h3>
-          <small>8 món đặc sản</small>
+          <span class="category-overlay" aria-hidden="true"></span>
+          <div class="category-text">
+            <h3>Các món ốc</h3>
+            <small>8 món đặc sản</small>
+          </div>
         </a>
         <!-- 2. Sò, Hào & Nghêu -->
         <a href="#products" class="category-card">
-          <span class="category-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 3C9 2 3 6 4 14s14 10 16-11ZM4 21l11-12"/>
-            </svg>
+          <span class="category-media">
+            <img src="images/products/so-duong-nuong.jpg" alt="" width="600" height="450" loading="lazy" onerror="this.style.display='none'">
           </span>
-          <h3>Sò, Hào & Nghêu</h3>
-          <small>8 món tươi ngọt</small>
+          <span class="category-overlay" aria-hidden="true"></span>
+          <div class="category-text">
+            <h3>Sò, Hào & Nghêu</h3>
+            <small>8 món tươi ngọt</small>
+          </div>
         </a>
         <!-- 3. Hải sản nướng -->
         <a href="#products" class="category-card">
-          <span class="category-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
-            </svg>
+          <span class="category-media">
+            <img src="images/products/bach-tuoc-nuong.jpg" alt="" width="600" height="450" loading="lazy" onerror="this.style.display='none'">
           </span>
-          <h3>Hải sản nướng</h3>
-          <small>2 món than hoa</small>
+          <span class="category-overlay" aria-hidden="true"></span>
+          <div class="category-text">
+            <h3>Hải sản nướng</h3>
+            <small>2 món than hoa</small>
+          </div>
         </a>
         <!-- 4. Mì, Cơm & Cháo -->
         <a href="#products" class="category-card">
-          <span class="category-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="m3 7 9-5 9 5v12l-9 4-9-4zM3 7l9 5 9-5M12 12v11"/>
-            </svg>
+          <span class="category-media">
+            <img src="images/products/mi-xao-hai-san.jpg" alt="" width="600" height="450" loading="lazy" onerror="this.style.display='none'">
           </span>
-          <h3>Mì, Cơm & Cháo</h3>
-          <small>4 món ấm bụng</small>
+          <span class="category-overlay" aria-hidden="true"></span>
+          <div class="category-text">
+            <h3>Mì, Cơm & Cháo</h3>
+            <small>4 món ấm bụng</small>
+          </div>
         </a>
       </div>
     </section>
@@ -214,7 +224,7 @@
         <article class="product-card reveal is-visible" style="--i:0">
           <div class="thumb">
             <img src="images/products/oc-huong.jpg" alt="Ốc hương" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+            <span class="stock-badge badge-success"><span class="status-dot"></span> Còn hàng</span>
             <span class="badge favorite-badge">Bán chạy</span>
           </div>
           <div class="product-body">
@@ -234,7 +244,7 @@
         <article class="product-card reveal is-visible" style="--i:1">
           <div class="thumb">
             <img src="images/products/oc-len.jpg" alt="Ốc len" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+            <span class="stock-badge badge-success"><span class="status-dot"></span> Còn hàng</span>
           </div>
           <div class="product-body">
             <span class="product-category">Ốc biển <span>·</span> kg</span>
@@ -253,7 +263,7 @@
         <article class="product-card reveal is-visible" style="--i:2">
           <div class="thumb">
             <img src="images/products/oc-mong-tay.jpg" alt="Ốc móng tay" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-warning"><span class="status-dot"></span> Sắp hết</span>
+            <span class="stock-badge badge-warning"><span class="status-dot"></span> Sắp hết</span>
           </div>
           <div class="product-body">
             <span class="product-category">Ốc biển <span>·</span> kg</span>
@@ -272,7 +282,7 @@
         <article class="product-card reveal is-visible" style="--i:3">
           <div class="thumb">
             <img src="images/products/oc-mo.jpg" alt="Ốc mỡ" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+            <span class="stock-badge badge-success"><span class="status-dot"></span> Còn hàng</span>
           </div>
           <div class="product-body">
             <span class="product-category">Ốc biển <span>·</span> kg</span>
@@ -291,7 +301,7 @@
         <article class="product-card reveal is-visible" style="--i:4">
           <div class="thumb">
             <img src="images/products/oc-buou.jpg" alt="Ốc bươu" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+            <span class="stock-badge badge-success"><span class="status-dot"></span> Còn hàng</span>
           </div>
           <div class="product-body">
             <span class="product-category">Ốc nước ngọt <span>·</span> kg</span>
@@ -310,7 +320,7 @@
         <article class="product-card reveal is-visible" style="--i:5">
           <div class="thumb">
             <img src="images/products/oc-nhoi.jpg" alt="Ốc nhồi" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+            <span class="stock-badge badge-success"><span class="status-dot"></span> Còn hàng</span>
           </div>
           <div class="product-body">
             <span class="product-category">Ốc nước ngọt <span>·</span> kg</span>
@@ -328,8 +338,8 @@
         <!-- 7. Ốc vặn -->
         <article class="product-card reveal is-visible" style="--i:6">
           <div class="thumb">
-            <img src="images/products/oc-van.jpg" alt="Ốc vặn" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-success"><span class="status-dot"></span> Còn hàng</span>
+            <img src="images/products/oc-buou.jpg" alt="Ốc vặn" width="800" height="600" onerror="this.style.display='none'">
+            <span class="stock-badge badge-success"><span class="status-dot"></span> Còn hàng</span>
           </div>
           <div class="product-body">
             <span class="product-category">Ốc nước ngọt <span>·</span> kg</span>
@@ -348,7 +358,7 @@
         <article class="product-card reveal is-visible out-of-stock" style="--i:7">
           <div class="thumb">
             <img src="images/products/oc-huong-rang-muoi-ot.jpg" alt="Ốc hương rang muối ớt" width="800" height="600" onerror="this.style.display='none'">
-            <span class="badge badge-danger"><span class="status-dot"></span> Hết hàng</span>
+            <span class="stock-badge badge-danger"><span class="status-dot"></span> Hết hàng</span>
           </div>
           <div class="product-body">
             <span class="product-category">Ốc chế biến <span>·</span> phần</span>
@@ -484,7 +494,7 @@
           </div>
         </div>
 
-        <div id="box-address-account" style="background:var(--blue-50); padding:12px 14px; border-radius:8px; margin-bottom:16px; font-size:14px; line-height:1.6;">
+        <div id="box-address-account" style="background:var(--sand); padding:12px 14px; border-radius:8px; margin-bottom:16px; font-size:14px; line-height:1.6;">
           <p style="margin-bottom:4px;"><strong>Người nhận:</strong> <span id="ck-account-name">Chưa có</span> (<span id="ck-account-phone">Chưa có SĐT</span>)</p>
           <p style="margin:0;"><strong>Địa chỉ:</strong> <span id="ck-account-address">Chưa có địa chỉ lưu trong tài khoản</span></p>
         </div>

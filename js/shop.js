@@ -133,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (mobileToggle && mainNav) {
     mobileToggle.addEventListener('click', function(e) {
       e.stopPropagation();
-      mainNav.classList.toggle('mobile-open');
+      const isOpen = mainNav.classList.toggle('mobile-open');
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
     });
   }
 
